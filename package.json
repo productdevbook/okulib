@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
-    "@oku/auth": "workspace:*",
+    "@productdevbook/auth": "workspace:*",
     "@types/lodash": "^4.14.182",
     "bumpp": "^8.2.1",
     "eslint": "^8.18.0",
