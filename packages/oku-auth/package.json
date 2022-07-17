@@ -1,7 +1,7 @@
 {
   "name": "@oku/auth",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "description": "General auth library, also supports capacitor storage",
   "author": "Mehmet - productdevbook <hi@productdevbook.com>",
