@@ -2,7 +2,7 @@
   "name": "@oku/monorepo",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@7.3.0",
+  "packageManager": "pnpm@7.5.2",
   "scripts": {
     "build": "pnpm rimraf packages/*/dist && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
     "dev": "pnpm stub",
