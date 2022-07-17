@@ -1,6 +1,6 @@
 {
   "name": "@productdevbook/monorepo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "build": "pnpm rimraf packages/*/dist && pnpm -r --filter=./packages/* run build",
