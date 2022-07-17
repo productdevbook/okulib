@@ -1,0 +1,50 @@
+{
+    "name": "@oku/monorepo",
+    "version": "0.0.1",
+    "private": true,
+    "packageManager": "pnpm@7.3.0",
+    "scripts": {
+      "build": "rimraf packages/*/dist && esno scripts/copy-files.ts && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
+      "dev": "pnpm stub",
+      "deploy": "pnpm stub && npm -C playground run build && npm -C interactive run build",
+      "lint": "eslint .",
+      "lint:fix": "pnpm lint --fix",
+      "play": "npm -C playground run dev",
+      "release": "bumpp package.json packages/**/package.json",
+      "stub": "pnpm -r --filter=./packages/* --parallel run stub",
+      "typecheck": "tsc --noEmit",
+      "test": "vitest",
+      "test:update": "vitest -u"
+    },
+    "devDependencies": {
+      "@antfu/eslint-config": "^0.25.2",
+      "eslint": "^8.18.0",
+      "pnpm": "^7.3.0",
+      "prettier": "^2.7.1",
+      "react": "^18.2.0",
+      "bumpp": "^8.2.1",
+      "rollup": "^2.75.7",
+      "semver": "^7.3.7",
+      "simple-git-hooks": "^2.8.0",
+      "splitpanes": "^3.1.1",
+      "terser": "^5.14.1",
+      "tsup": "^6.1.2",
+      "typescript": "^4.7.4",
+      "unbuild": "^0.7.4",
+      "@oku/auth": "workspace:*"
+    },
+    "pnpm": {
+      "overrides": {
+        "@nuxt/kit-edge": "npm:@nuxt/kit@latest",
+        "vite": "2.9.12"
+      }
+    },
+    "simple-git-hooks": {
+      "pre-commit": "npx lint-staged"
+    },
+    "lint-staged": {
+      "*.{js,ts,tsx,vue,md}": [
+        "eslint --fix"
+      ]
+    }
+  }

@@ -1,0 +1,7 @@
+packages:
+  - bench
+  - playground
+  - interactive
+  - 'packages/*'
+  - 'test/fixtures/*'
+  - '!examples/**'
