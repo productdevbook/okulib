@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@7.3.0",
   "scripts": {
-    "build": "pnpm rimraf packages/*/dist && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
+    "build": "pnpm rimraf packages/*/dist && pnpm -r --filter=./packages/* run build",
     "dev": "pnpm stub",
     "deploy": "pnpm stub && npm -C playground run build && npm -C interactive run build",
     "lint": "eslint .",

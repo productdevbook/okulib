@@ -1,11 +1,18 @@
 {
   "name": "@oku/auth",
   "version": "0.0.2",
-  "private": false,
   "license": "MIT",
   "description": "General auth library, also supports capacitor storage",
   "author": "Mehmet - productdevbook <hi@productdevbook.com>",
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/productdevbook/okulib.git",
+    "directory": "packages/@oku-auth"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -56,8 +63,5 @@
     "prettier": "^2.6.2",
     "tsup": "^6.0.0",
     "typescript": "^4.7.3"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
