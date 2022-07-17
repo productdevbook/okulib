@@ -28,7 +28,7 @@ importers:
       unbuild: ^0.7.4
     devDependencies:
       '@antfu/eslint-config': 0.25.2_he2ccbldppg44uulnyq4rwocfa
-      '@oku/auth': link:packages/oku-auth
+      '@oku/auth': link:packages/@oku-auth
       '@types/lodash': 4.14.182
       bumpp: 8.2.1
       eslint: 8.20.0
@@ -46,7 +46,7 @@ importers:
       typescript: 4.7.4
       unbuild: 0.7.4
 
-  packages/oku-auth:
+  packages/@oku-auth:
     specifiers:
       '@antfu/eslint-config': ^0.25.2
       '@capacitor/storage': ^1.2.5
