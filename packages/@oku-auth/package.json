@@ -13,6 +13,24 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "auth",
+    "graphql-auth",
+    "capacitor-auth",
+    "vue-auth",
+    "angular-auth",
+    "react-auth",
+    "nextjs-auth",
+    "nuxtjs-auth",
+    "nodejs-auth",
+    "auth-library",
+    "auth-library-for-graphql",
+    "auth-library-for-capacitor"
+  ],
+  "homepage": "https://github.com/productdevbook/okulib#readme",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -23,9 +41,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
+
   "engines": {
     "node": ">=16"
   },
