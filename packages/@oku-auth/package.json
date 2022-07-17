@@ -1,10 +1,9 @@
 {
   "name": "@oku/auth",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "General auth library, also supports capacitor storage",
   "author": "Mehmet - productdevbook <hi@productdevbook.com>",
-  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/productdevbook/okulib.git",
@@ -41,7 +40,6 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-
   "engines": {
     "node": ">=16"
   },
