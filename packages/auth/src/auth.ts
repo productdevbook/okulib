@@ -186,6 +186,7 @@ export function AuthFunc(options: AuthOptions,
       if (get(res.data, options.errorProperty)) {
         resetState()
         callback?.onError?.(get(res.data, options.errorProperty))
+        return res.data
       }
       const tokenData = get(res.data, options.token.property)
 
@@ -205,6 +206,7 @@ export function AuthFunc(options: AuthOptions,
         })
         callback.onSuccess?.(options.redirect.home)
         callback.onLoading?.(false)
+        return
       }
       else if (options.token.autoDecode) {
         const decoded = setTokenExpiration(tokenData)
@@ -388,6 +390,7 @@ export function AuthFunc(options: AuthOptions,
     const expiredAt = await getTokenExpirationTime()
     if (expiredAt && !isTokenExpired(expiredAt)) {
       callback?.onLoading?.(false)
+      callback?.onError?.('Token is not expired')
       return null
     }
 
@@ -396,6 +399,7 @@ export function AuthFunc(options: AuthOptions,
       const refreshTokenName = options.refreshToken.name
       if (!refreshToken) {
         callback?.onLoading?.(false)
+        callback?.onError?.('Refresh token is not found')
         return null
       }
 
@@ -426,6 +430,7 @@ export function AuthFunc(options: AuthOptions,
         ...options.endpoints.refresh,
         data,
       })
+
       if (get(res.data, options.errorProperty)) {
         resetState()
         handleRefreshTokenFailed()
@@ -455,6 +460,7 @@ export function AuthFunc(options: AuthOptions,
     }
 
     catch (e: any) {
+      callback?.onError?.(e)
       return handleRefreshTokenFailed(e)
     }
     finally {
@@ -486,11 +492,4 @@ export function AuthFunc(options: AuthOptions,
     setRefreshToken,
     refreshToken,
   }
-  //   initStore() {
-
-  //     loggedIn() {
-  //       return !!user && !!token
-  //     }
-
-  // }
 }
