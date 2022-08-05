@@ -1,13 +1,13 @@
-import { Storage } from '@capacitor/storage'
+import { Preferences } from '@capacitor/preferences'
 import { AuthOptions, AuthStorageAsync } from '../types/index'
 export class CapacitorStorage implements AuthStorageAsync {
   async set(key: string, value: any) {
-    await Storage.set({ key, value: JSON.stringify(value) })
+    await Preferences.set({ key, value: JSON.stringify(value) })
   }
 
   async get(key: string, defaultValue: any) {
     try {
-      const { value } = await Storage.get({ key })
+      const { value } = await Preferences.get({ key })
       return JSON.parse(value!)
     }
     catch {
@@ -16,13 +16,13 @@ export class CapacitorStorage implements AuthStorageAsync {
   }
 
   async remove(key: string) {
-    await Storage.remove({ key })
+    await Preferences.remove({ key })
   }
 
   async clear(options: AuthOptions) {
-    await Storage.remove({ key: options.token.storageName })
-    await Storage.remove({ key: options.user.storageName })
-    await Storage.remove({ key: options.expiredStorage })
-    await Storage.remove({ key: options.refreshToken.storageName })
+    await Preferences.remove({ key: options.token.storageName })
+    await Preferences.remove({ key: options.user.storageName })
+    await Preferences.remove({ key: options.expiredStorage })
+    await Preferences.remove({ key: options.refreshToken.storageName })
   }
 }
