@@ -1,6 +1,6 @@
 {
   "name": "@productdevbook/auth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "description": "General auth library, also supports capacitor storage",
   "author": "Mehmet - productdevbook <hi@productdevbook.com>",
